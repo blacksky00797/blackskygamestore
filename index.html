@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
 
     <!-- Bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -25,15 +26,33 @@
     <section id="headerSection">
         <div class="left appLogo">BLACKSKY GAME STORE</div>
         <div class="right">
+            
             <button class="contactButton">Contact</button>
             <button class="buyGameButton">Buy games</button>
+            <div class="searchBarWrapper">
+                <input type="text" placeholder="Search...">
+                <button class="searchButton"><i class="fas fa-search"></i></button>
+            </div>
         </div>
     </section>
 
     <section id="contactSection">
+        <div class="closeButtonWrapper"><i class="far fa-window-close"></i></div>
         <div class="contactWrapper">
-            <div class="title">BLACKSKY GAME STORE</div>
-            <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d238.65727277786817!2d96.1730209785753!3d16.850332311913064!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x30c193bc38593deb%3A0x579a5cd7946b50dd!2sBlacksky%20PC%20Game%20Store%2C%20No.858%20%2C%20Zarga%20(%2016%20)%20Street%20%2C%20(%204%20)%20Ward%2C%2011091!3m2!1d16.8503074!2d96.172935!5e0!3m2!1sen!2smm!4v1631515649827!5m2!1sen!2smm" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d752.2389158961546!2d96.17291837637289!3d16.850259787537514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c193bc38593deb%3A0x579a5cd7946b50dd!2sBlacksky%20PC%20Game%20Store!5e0!3m2!1sen!2smm!4v1631593456432!5m2!1sen!2smm" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="contactAndSocialWrapper">
+                <div class="contactContainer">
+                    <div class="title">CONTACT US</div>
+                    <div class="phoneNumber">Call us: <span>09769952798 , +959769952798</span></div>
+                    <div class="address">Address: <span>Zarga (16) Street, (4) Ward, South Okkalapa Township, Yangon, Myanmar</span></div>
+                    <div class="additionalNote">Additional note: <span>Only External HDD or SSD are accepted.</span></div>
+                </div>
+                <div class="socialContainer">
+                    <div class="facebook social"><i class="fab fa-facebook-f"></i></div>
+                    <div class="messenger social"><i class="fab fa-facebook-messenger"></i></div>
+                    <div class="phone social"><a href=""><i class="fas fa-phone"></i></a></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -58,54 +77,6 @@
         </div>
         <div class="popularGameSectionShadow"></div>
     </section>
-
-    <!-- <section id="gameDetail">
-        <div class="titleWrapper">
-            <div class="title">Outriders</div>
-            <div class="buttonWrapper">
-                <button class="titleButtonStyle buyGameButton">Buy game</button>
-                <button class="titleButtonStyle closeDetailButton">Close detail</button>
-            </div>
-        </div>
-        <div class="logoAndDetailWrapper">
-            <img class="logo" src="https://i.ibb.co/Lr7PcPn/Outriders-logo.jpg">
-            <div class="specWrapper">
-                <div class="specLabel">Specifications</div>
-                <div class="spec">
-                    <div class="minimum">
-                        <div class="specTitle">Minimum system requirement</div>
-                        <div class="specs"><b>OS:</b> <span class="specDetail">Windows 10/8/7 ( 64 bit )</span></div>
-                        <div class="specs"><b>CPU:</b> <span class="specDetail">Intel Core i5-3470/ AMD FX-8350</span></div>
-                        <div class="specs"><b>GPU:</b> <span class="specDetail">Nvidia GeForce GTX 750ti/ AMD Radeon R9 270x</span></div>
-                        <div class="specs"><b>RAM:</b> <span class="specDetail">8 GB</span></div>
-                        <div class="specs"><b>DirectX:</b> <span class="specDetail">Version 11</span></div>
-                    </div>
-                    <div class="recommend">
-                        <div class="specTitle">Recommend system requirement</div>
-                        <div class="specs"><b>OS:</b> <span class="specDetail">Windows 10/8/7 ( 64 bit )</span></div>
-                        <div class="specs"><b>CPU:</b> <span class="specDetail">Intel Core i5-3470/ AMD FX-8350</span></div>
-                        <div class="specs"><b>GPU:</b> <span class="specDetail">Nvidia GeForce GTX 750ti/ AMD Radeon R9 270x</span></div>
-                        <div class="specs"><b>RAM:</b> <span class="specDetail">8 GB</span></div>
-                        <div class="specs"><b>DirectX:</b> <span class="specDetail">Version 12</span></div>
-                    </div>
-                </div>
-                <div class="specs"><b>Genre:</b> <span class="specDetail">Third person shooter</span></div>
-                <div class="specs"><b>Publisher:</b> <span class="specDetail">Square Enix</span></div>
-                <div class="specs"><b>Size:</b> <span class="specDetail size">43.0 GB</span></div>
-            </div>
-        </div>
-        <div class="additionalImagesWrapper">
-            <div class="additionImageLabel">Additional Images</div>
-            <div class="gameplayImagesWrapper">
-                <div class="imageWrapper"><i class="far fa-eye"></i><img src="https://i.ibb.co/Lr7PcPn/Outriders-logo.jpg" alt="Outriders-logo" border="0" class="gameplayImage"></div>
-                <div class="imageWrapper"><i class="far fa-eye"></i><img src="https://i.ibb.co/6DZpXng/Outriders-gameplay-3.jpg" alt="Outriders-gameplay-3" border="0" class="gameplayImage"></div>
-                <div class="imageWrapper"><i class="far fa-eye"></i><img src="https://i.ibb.co/tsNbwYM/Outriders-gameplay-2.jpg" alt="Outriders-gameplay-2" border="0" class="gameplayImage"></div>
-                <div class="imageWrapper"><i class="far fa-eye"></i><img src="https://i.ibb.co/vXZ0b8k/Outriders-gameplay-1.jpg" alt="Outriders-gameplay-1" border="0" class="gameplayImage"></div>
-                <div class="imageWrapper"><i class="far fa-eye"></i><img src="https://i.ibb.co/3SQJF7C/Outriders-gameplay-4.png" alt="Outriders-gameplay-4" border="0" class="gameplayImage"></div>
-            </div>
-        </div>
-        <div class="seperateLine"></div>
-    </section> -->
 
     <section id="availableGameList">
         <div class="row">

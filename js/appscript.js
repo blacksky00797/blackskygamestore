@@ -1,5 +1,11 @@
 let headerSection = document.querySelector("#headerSection");
+let contactSection = document.querySelector("#contactSection");
+let contactWrapper = document.querySelector("#contactSection .contactWrapper");
 let contactButton = document.querySelector(".contactButton");
+let closeContactButton = document.querySelector("#contactSection .closeButtonWrapper");
+let facebookButton = document.querySelector("#contactSection .contactWrapper .facebook");
+let messengerButton = document.querySelector("#contactSection .contactWrapper .messenger");
+let phoneButton = document.querySelector("#contactSection .contactWrapper .phone");
 let popularGameSection = document.querySelector("#popularGameSection");
 let availableGameListSection = document.querySelector("#availableGameList");
 let backgroundImage = document.querySelector("#popularGameSection .backgroundImage");
@@ -9,7 +15,12 @@ let additionalImagesWrapper = document.querySelectorAll(".additionalImagesWrappe
 let delayInMilliseconds = 300; //1 second
 let smoothScrollBar = { behavior: 'smooth'};
 const pageMessengerLink = "https://m.me/106852994268347";
+const pageLink = "https://facebook.com/Blacksky-Tech-Channel-106852994268347";
+const phoneNumber = "+959769952798";
 
+
+
+// Initiate application...
 let sectionHider = (section,isHide) => {
     if ( isHide ) {
         section.style.display = "none";
@@ -28,7 +39,23 @@ let buyGameListener = () => {
     });
 }
 
-// Initiate application...
+messengerButton.onclick = () => {
+    window.open(pageMessengerLink, '_blank');
+}
+facebookButton.onclick = () => {
+    window.open(pageLink, '_blank');
+}
+phoneButton.firstChild.setAttribute("href",`tel:${phoneNumber}`);
+
+closeContactButton.onclick = () => {
+    contactSection.style.opacity = 0;
+    contactWrapper.style.transform = "translateY(-50%)";
+    setTimeout(() => {
+        contactSection.style.display = "none";
+    }, 400);
+    
+}
+
 
 backgroundImage.setAttribute("src",gameData[0].logoLink);
 buyGameListener();
@@ -66,7 +93,11 @@ for ( let id=1 ; id < gameData.length ; id++ ) {
 
     // Initializing contact button manipulation...
 contactButton.onclick = () => {
-    
+    contactSection.style.display = "flex";
+    setTimeout(() => {
+        contactSection.style.opacity = 1;
+        contactWrapper.style.transform = "translateY(0%)";
+    }, 10);
 }
     // Initializing contact button manipulation...
 
