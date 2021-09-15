@@ -1,13 +1,15 @@
 let headerSection = document.querySelector("#headerSection");
 let contactSection = document.querySelector("#contactSection");
+let popularGameSection = document.querySelector("#popularGameSection");
+let availableGameListSection = document.querySelector("#availableGameList");
+let searchResultSection = document.querySelector("#searchResultSection");
 let contactWrapper = document.querySelector("#contactSection .contactWrapper");
 let contactButton = document.querySelector(".contactButton");
 let closeContactButton = document.querySelector("#contactSection .closeButtonWrapper");
 let facebookButton = document.querySelector("#contactSection .contactWrapper .facebook");
 let messengerButton = document.querySelector("#contactSection .contactWrapper .messenger");
 let phoneButton = document.querySelector("#contactSection .contactWrapper .phone");
-let popularGameSection = document.querySelector("#popularGameSection");
-let availableGameListSection = document.querySelector("#availableGameList");
+let searchBar = document.querySelector("#headerSection .searchBarWrapper .searchBar");
 let backgroundImage = document.querySelector("#popularGameSection .backgroundImage");
 let gameplayImages = document.querySelectorAll("#popularGameSection .gameplayImage");
 let popularDetailButton = document.querySelector(".popularDetailButton");
@@ -54,6 +56,59 @@ closeContactButton.onclick = () => {
         contactSection.style.display = "none";
     }, 400);
     
+}
+
+if ( searchBar.value === "" ) searchResultSection.style.display = "none";
+searchBar.onkeydown = (event) => {
+    searchResultSection.style.display = "block";
+    setTimeout(() => {
+        $(".resultWrapper").remove();
+        let isDatafound = false;
+        let pressedKey = event.code;
+        let searchData = searchBar.value;
+        // if ( searchData === "" ) return;
+        for ( let id = 0 ; id < gameData.length ; id++ ) {
+            if ( searchData === "" ) {
+                $(".resultWrapper").remove();
+                searchResultSection.style.display = "none";
+            } 
+            else if ( gameData[id].title.toLowerCase().includes(searchData.toLowerCase()) ) {
+                $(searchResultSection).append(`
+                    <div class="resultWrapper" id="SID${id}">
+                    <div class="imageWrapper">
+                        <img src="${gameData[id].logoLink}" alt="${gameData[id].title}">
+                    </div>
+                    <div class="detailWrapper">
+                        <div class="title">${gameData[id].title}</div>
+                        <div class="publisher">Publisher: <span>${gameData[id].publisher}</span></div>
+                    </div>
+                    </div>
+                `);
+                $(".noResultFound").attr("style","display: none");
+                isDatafound = true;
+                // Clicked on search result data...
+                document.querySelector(`#SID${id}`).onclick = () => {
+                    sectionHider(searchResultSection,true);
+                    setTimeout(() => {
+                        sectionHider(headerSection,true);
+                        sectionHider(popularGameSection,true);
+                        sectionHider(availableGameListSection,true);
+                        
+                    }, 1000);
+                    gameDetailManipulator(id,popularGameSection);
+                }
+                // Clicked on search result data...
+            }
+        }
+        if ( !isDatafound ) {        
+            $(".noResultFound").attr("style","display: flex");
+            
+        }
+        // If press enter
+        if ( pressedKey === "Enter" || pressedKey === "NumpadEnter" ) {
+            console.log(searchData);
+        }
+    }, 100);
 }
 
 
