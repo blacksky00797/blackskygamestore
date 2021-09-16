@@ -95,6 +95,7 @@ searchBar.onkeydown = (event) => {
                         sectionHider(headerSection,true);
                         sectionHider(popularGameSection,true);
                         sectionHider(availableGameListSection,true);
+                        sectionHider(scrollTopSection,true);
                         
                     }, 1000);
                     gameDetailManipulator(id,popularGameSection);
@@ -301,6 +302,7 @@ let gameDetailManipulator = ( clickedId , oldNode ) => {
                     sectionHider(headerSection,false);
                     sectionHider(popularGameSection,false);
                     sectionHider(availableGameListSection,false);
+                    sectionHider(scrollTopSection,false);
                     oldNode.scrollIntoView(smoothScrollBar);
                 },1000);
             } );
@@ -315,6 +317,7 @@ popularDetailButton.onclick = () => {
         sectionHider(headerSection,true);
         sectionHider(popularGameSection,true);
         sectionHider(availableGameListSection,true);
+        sectionHider(scrollTopSection,true);
     }, 1000);
     gameDetailManipulator(0,popularGameSection);
 }
@@ -330,6 +333,7 @@ let gameDetails;
                 sectionHider(headerSection,true);
                 sectionHider(popularGameSection,true);
                 sectionHider(availableGameListSection,true);
+                sectionHider(scrollTopSection,true);
             }, 1000);
             let clickedId = parseInt(gameIntroWrapper[id].getAttribute("id").replace("AGID",""));
             gameDetailManipulator(clickedId,gameIntroWrapper[id]);
