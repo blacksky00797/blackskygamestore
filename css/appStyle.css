@@ -207,7 +207,7 @@ body {
     width: 20%;
     height: 40%;
     border: white 2px solid;
-    border-radius: 100%;
+    border-radius: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -643,6 +643,9 @@ body {
     #headerSection .right {
         width: 50%;
     }
+    #searchResultSection {
+        top: 60px;
+    }
 
     #contactSection .contactWrapper .title {
         font-size: 25px;
@@ -653,13 +656,7 @@ body {
     #contactSection .contactWrapper .contactAndSocialWrapper .socialContainer .social {
         width: 20%;
         height: 37%;
-        border: white 2px solid;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 25px;
-        transition: all 0.3s ease;
+        font-size: 22px;
     }
     
 }
@@ -687,13 +684,20 @@ body {
     #contactSection .contactWrapper .contactAndSocialWrapper .socialContainer .social {
         width: 22%;
         height: 35%;
-        border: white 2px solid;
-        border-radius: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 25px;
-        transition: all 0.3s ease;
+    }
+
+    #searchResultSection {
+        width: 45%;
+    }
+    #searchResultSection .resultWrapper .imageWrapper {
+        width: 85px;
+        height: 70%;
+    }
+    #searchResultSection .resultWrapper .detailWrapper .title {
+        font-size: 17px;
+    }
+    #searchResultSection .resultWrapper .detailWrapper .publisher {
+        font-size: 13px;
     }
 }
 
@@ -759,6 +763,7 @@ body {
         height: 60%;
         font-size: 25px;
     }
+
 }
 
 @media only screen and (max-width: 790px ) {
@@ -769,17 +774,21 @@ body {
     }
     #headerSection {
         position: static;
+        flex-direction: column;
+        height: 90px;
+    }
+    #searchResultSection {
+        position: absolute;
     }
     #scrollTopSection {
         display: flex;
     }
-    #headerSection {
-        flex-direction: column;
-        height: 90px;
-    }
     #headerSection .right {
         width: 100%;
         padding: 0px;
+    }
+    #searchResultSection {
+        top: 90px;
     }
     #popularGameSection {
         height: 90vh;
@@ -825,6 +834,22 @@ body {
         height: 45%;
         font-size: 20px;
     }
+
+    #searchResultSection {
+        width: 50%;
+    }
+    #searchResultSection .resultWrapper {
+        height: 15%;
+    }
+    #searchResultSection .resultWrapper .imageWrapper {
+        width: 70px;
+        height: 70%;
+    }
+    #searchResultSection .resultWrapper .detailWrapper .title {
+        font-size: 15px;
+    }
+
+
 }
 
 @media only screen and (max-width: 620px ) {
@@ -853,6 +878,20 @@ body {
         height: 40%;
         font-size: 18px;
     }
+
+    #searchResultSection {
+        width: 70%;
+    }
+    #searchResultSection .resultWrapper {
+        height: 15%;
+    }
+    #searchResultSection .resultWrapper .imageWrapper {
+        width: 70px;
+        height: 70%;
+    }
+    #searchResultSection .resultWrapper .detailWrapper .title {
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 580px ) {
@@ -877,6 +916,21 @@ body {
     #contactSection .closeButtonWrapper {
         font-size: 25px;
         right: 10px;
+    }
+
+    #searchResultSection {
+        width: 80%;
+        right: 0px;
+    }
+    #searchResultSection .resultWrapper {
+        height: 13%;
+    }
+    #searchResultSection .resultWrapper .imageWrapper {
+        width: 60px;
+        height: 70%;
+    }
+    #searchResultSection .resultWrapper .detailWrapper .title {
+        font-size: 13px;
     }
 }
 
@@ -952,6 +1006,20 @@ body {
         height: 27px;
         width: 50%;
         font-size: 10px;
+    }
+
+    #searchResultSection {
+        width: 90%;
+    }
+    #searchResultSection .resultWrapper {
+        height: 11%;
+    }
+    #searchResultSection .resultWrapper .imageWrapper {
+        width: 50px;
+        height: 70%;
+    }
+    #searchResultSection .resultWrapper .detailWrapper .title {
+        font-size: 11px;
     }
 }
 
