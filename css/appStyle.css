@@ -880,10 +880,10 @@ body {
     }
 }
 
-@media only screen and (max-width: 490px ) {
+@media only screen and (max-width: 580px ) {
     #contactSection .contactWrapper .contactAndSocialWrapper .socialContainer .social {
         width: 20%;
-        height: 45%;
+        height: 46%;
         font-size: 20px;
     }
     #contactSection .closeButtonWrapper {
@@ -892,7 +892,19 @@ body {
     }
 }
 
-@media only screen and (max-width: 380px ) {
+@media only screen and (max-width: 500px ) {
+    #contactSection .contactWrapper .contactAndSocialWrapper .socialContainer .social {
+        width: 18%;
+        height: 42%;
+        font-size: 20px;
+    }
+    #contactSection .closeButtonWrapper {
+        font-size: 25px;
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 390px ) {
     .appLogo {
         font-size: 25px;
     }
@@ -949,7 +961,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 350px ) {
+@media only screen and (max-width: 360px ) {
     .appLogo {
         font-size: 20px;
     }
