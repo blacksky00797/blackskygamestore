@@ -4,6 +4,7 @@ let popularGameSection = document.querySelector("#popularGameSection");
 let availableGameListSection = document.querySelector("#availableGameList");
 let searchResultSection = document.querySelector("#searchResultSection");
 let scrollTopSection = document.querySelector("#scrollTopSection");
+let copyrightSection = document.querySelector("#copyrightSection");
 let contactWrapper = document.querySelector("#contactSection .contactWrapper");
 let contactButton = document.querySelector(".contactButton");
 let closeContactButton = document.querySelector("#contactSection .closeButtonWrapper");
@@ -24,12 +25,13 @@ const phoneNumber = "+959769952798";
 
 
 // Initiate application...
-scrollTopSection.onclick = () => headerSection.scrollIntoView(smoothScrollBar);
+scrollTopSection.onclick = () => availableGameListSection.scrollIntoView(smoothScrollBar);
 let sectionHider = (section,isHide) => {
     if ( isHide ) {
         section.style.display = "none";
     } else {
-        if ( section === headerSection ) {
+        if ( section === headerSection || section === scrollTopSection || 
+            section === copyrightSection ) {
             section.style.display = "flex";
         } else {
             section.style.display = "block";
@@ -96,6 +98,7 @@ searchBar.onkeydown = (event) => {
                         sectionHider(popularGameSection,true);
                         sectionHider(availableGameListSection,true);
                         sectionHider(scrollTopSection,true);
+                        sectionHider(copyrightSection,true);
                         
                     }, 1000);
                     gameDetailManipulator(id,popularGameSection);
@@ -249,6 +252,13 @@ let gameDetailManipulator = ( clickedId , oldNode ) => {
                 </div>
             </div>
             <div class="seperateLine"></div>
+            <section id="copyrightSection">
+                <div class="detailWrapper">
+                    <div>Copyright</div>
+                    <div>&copy;</div>
+                    <div class="authorName">Blacksky</div>
+                </div>
+            </section>
             `
 
             insertAfter(gameDetails,availableGameListSection);
@@ -303,6 +313,7 @@ let gameDetailManipulator = ( clickedId , oldNode ) => {
                     sectionHider(popularGameSection,false);
                     sectionHider(availableGameListSection,false);
                     sectionHider(scrollTopSection,false);
+                    sectionHider(copyrightSection,false);
                     oldNode.scrollIntoView(smoothScrollBar);
                 },1000);
             } );
@@ -318,6 +329,7 @@ popularDetailButton.onclick = () => {
         sectionHider(popularGameSection,true);
         sectionHider(availableGameListSection,true);
         sectionHider(scrollTopSection,true);
+        sectionHider(copyrightSection,true);
     }, 1000);
     gameDetailManipulator(0,popularGameSection);
 }
@@ -334,6 +346,7 @@ let gameDetails;
                 sectionHider(popularGameSection,true);
                 sectionHider(availableGameListSection,true);
                 sectionHider(scrollTopSection,true);
+                sectionHider(copyrightSection,true);
             }, 1000);
             let clickedId = parseInt(gameIntroWrapper[id].getAttribute("id").replace("AGID",""));
             gameDetailManipulator(clickedId,gameIntroWrapper[id]);
