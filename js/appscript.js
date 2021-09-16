@@ -3,6 +3,7 @@ let contactSection = document.querySelector("#contactSection");
 let popularGameSection = document.querySelector("#popularGameSection");
 let availableGameListSection = document.querySelector("#availableGameList");
 let searchResultSection = document.querySelector("#searchResultSection");
+let scrollTopSection = document.querySelector("#scrollTopSection");
 let contactWrapper = document.querySelector("#contactSection .contactWrapper");
 let contactButton = document.querySelector(".contactButton");
 let closeContactButton = document.querySelector("#contactSection .closeButtonWrapper");
@@ -23,6 +24,7 @@ const phoneNumber = "+959769952798";
 
 
 // Initiate application...
+scrollTopSection.onclick = () => headerSection.scrollIntoView(smoothScrollBar);
 let sectionHider = (section,isHide) => {
     if ( isHide ) {
         section.style.display = "none";
